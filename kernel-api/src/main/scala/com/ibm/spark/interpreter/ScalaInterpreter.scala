@@ -202,7 +202,8 @@ class ScalaInterpreter(
   }
 
   def truncateResult(result:String, showType:Boolean =false, noTruncate: Boolean = false): String = {
-    val resultRX="""(res\d+):\s+(\S+)\s+=\s+(.*)""".r
+/*    val resultRX="""(res\d+):\s+(\S+)\s+=\s+(.*)""".r */
+    val resultRX="""([^:]*):\s+([^=]*)=\s+(.*)""".r 
 
     result match {
       case resultRX(varName,varType,resString) => {
@@ -219,7 +220,7 @@ class ScalaInterpreter(
         returnStr
 
       }
-      case _ => ""
+      case _ => ">" + result
     }
 
 

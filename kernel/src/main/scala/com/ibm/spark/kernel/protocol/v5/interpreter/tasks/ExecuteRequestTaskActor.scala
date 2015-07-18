@@ -93,6 +93,7 @@ class ExecuteRequestTaskActor(interpreter: Interpreter) extends Actor with LogLi
             // If we get an incomplete it's most likely a syntax error, so
             // let the user know.
             sender ! Right(new ExecuteError("Syntax Error.", "", List()))
+
         }
       } else {
         // If we get empty code from a cell then just return ExecuteReplyOk

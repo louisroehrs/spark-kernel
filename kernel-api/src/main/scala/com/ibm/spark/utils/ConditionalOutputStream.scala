@@ -24,5 +24,6 @@ class ConditionalOutputStream(
 ) extends OutputStream {
   require(outputStream != null)
 
-  override def write(b: Int): Unit = if (condition) outputStream.write(b)
+
+  override def write(b: Int): Unit = if (condition) outputStream.write(b) 
 }

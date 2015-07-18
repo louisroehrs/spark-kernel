@@ -76,7 +76,7 @@ class KernelOutputStream(
     val contents = internalBytes.synchronized {
       logger.trace("Getting content to flush")
       val bytesToString = new String(internalBytes.toArray, EncodingType)
-logger.warn(bytesToString)
+
       // Clear the internal buffer
       internalBytes.clear()
 

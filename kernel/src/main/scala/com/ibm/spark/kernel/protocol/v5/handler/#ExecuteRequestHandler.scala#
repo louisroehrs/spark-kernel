@@ -77,7 +77,7 @@ class ExecuteRequestHandler(
       executeFuture.onComplete {
         case Success(tuple) =>
           val (executeReply, executeResult) = updateCount(tuple, executionCount)
-logger.warn("tuple" + tuple)
+ logger.warn("tuple" + tuple)
           //  Send an ExecuteReply to the client
           val executeReplyMsg = skeletonBuilder
             .withHeader(MessageType.Outgoing.ExecuteReply)

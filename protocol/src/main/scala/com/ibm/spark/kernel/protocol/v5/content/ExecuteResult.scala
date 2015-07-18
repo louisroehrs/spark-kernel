@@ -24,7 +24,10 @@ case class ExecuteResult (
   data: Data,
   metadata: Metadata
 )  extends KernelMessageContent {
-  def hasContent = data != null && data.exists(x => x._2 != null && x._2.nonEmpty)
+
+/* LFR Louis */
+  def hasContent = data != null
+
   override def content : String =
     Json.toJson(this)(ExecuteResult.executeResultWrites).toString
 }

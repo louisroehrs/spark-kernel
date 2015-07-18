@@ -62,7 +62,7 @@ class InputRequestReplyHandler(
         val session = kernelMessage.header.session
         val inputReply = Json.parse(kernelMessage.contentString).as[InputReply]
 
-        logger.debug(s"Received input reply for session $session with value " +
+        logger.warn(s"Received input reply for session $session with value " +
           s"'${inputReply.value}'")
 
         responseMap(session) ! inputReply.value
